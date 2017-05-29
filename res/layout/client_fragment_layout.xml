@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.purdue.okarim.MainActivity" >
+
+    <!-- TODO your layout here -->
+
+    <TextView
+        android:id="tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding"
+        android:text="Name"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@id/et_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tv_name"
+        android:layout_alignBottom="@id/tv_name"
+        android:layout_marginLeft="17dp"
+        android:layout_toRightOf="@id/tv_name"
+        android:ems="10"
+        android:inputType="textNoSuggestions"
+        android:padding="@dimen/padding"
+        android:text=""
+        android:textSize="@dimen/text_size_medium" />
+
+    <TextView
+        android:id="@id/tv_preferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_name"
+        android:layout_below="@id/tv_name"
+        android:padding="@dimen/padding"
+        android:text="Preferences"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_preferences"
+        android:layout_alignRight="@id/et_name"
+        android:layout_below="@id/tv_preferences" >
+
+        <RadioButton
+            android:id="@+id/radio0"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="I am a requester. Match me with only volunteers"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I am a volunteer. Don't match me with other volunteers" 
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I have no preference of being either a requester or a volunteer" 
+            android:textSize="10sp" />
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spinnerFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroup1"
+        android:layout_below="@+id/radioGroup1" 
+        />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinnerFrom"
+        android:layout_below="@+id/spinnerFrom" />
+
+    <Button
+        android:id="@+id/bu_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/spinner1"
+        android:layout_marginBottom="32dp"
+        android:layout_marginRight="41dp"
+        android:enabled="true"
+        android:gravity="center"
+        android:minHeight="40dp"
+        android:minWidth="80dp"
+        android:onClick="onSubmit"
+        android:padding="@dimen/padding"
+        android:text="@string/submit" />
+
+    <Button
+        android:id="@+id/bu_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bu_submit"
+       
+         android:enabled="true"
+        android:gravity="center"
+        android:minHeight="40dp"
+        android:minWidth="80dp"
+        android:onClick="onSubmit"
+        android:padding="@dimen/padding"
+        android:text="Client" />
+
+</RelativeLayout>
